@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  hackercv:
+    build: .
+    container_name: hackercv
+    ports:
+      - 8080:8080
+    volumes:
+      - ./public/:/usr/src/app/public
+      - ./src/:/usr/src/app/src
