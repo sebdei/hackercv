@@ -1,7 +1,11 @@
 <template>
   <div>
     <Header/>
-    <router-view></router-view>
+    
+    <div class="container mb-5">
+      <router-view></router-view>
+    </div>
+
     <Footer/>
   </div>
 </template>
@@ -22,10 +26,8 @@ export default {
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-size: 1.5em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
