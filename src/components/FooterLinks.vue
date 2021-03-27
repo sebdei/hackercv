@@ -1,7 +1,7 @@
 <template>
   <section>
     <span v-for="item in links" :key="item.link" class="mx-2">
-      <a href="{{ item.link }}">{{ item.text }}</a>
+      <a href="{{ item.link }}"><span v-html="item.text"/></a>
     </span>
   </section>
 </template>

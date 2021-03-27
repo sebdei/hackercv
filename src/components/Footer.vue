@@ -18,8 +18,8 @@
   <!-- Footer -->
 </template>
 <script>
-import FooterLinks from './custom/FooterLinks'
-import links from './custom/footer_links.json'
+import FooterLinks from './FooterLinks'
+import links from '@/ressources/components/footer_links.json'
 
 export default {
   name: 'Footer',
