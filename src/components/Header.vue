@@ -26,7 +26,7 @@
 export default {
   computed: {
     views: function () {
-      return ['About', 'Projects']
+      return ['About', 'Projects', 'Blog']
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <ViewPage header="About">
+  <ViewPage header="Blog">
     <span>{{ content.title }}</span>
   </ViewPage>
 </template>
@@ -11,7 +11,7 @@ import ViewPage from '@/components/view/ViewPage'
 
 export default {
   components: {
-    ViewPage,
+    ViewPage
   },
   computed: {
     content: function () {

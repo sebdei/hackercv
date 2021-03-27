@@ -1,9 +1,22 @@
 <template>
-  Projects
+  <ViewPage header="Projects">
+    <span>{{ content.title }}</span>
+  </ViewPage>
 </template>
 
 <script>
-export default {
+import content from './content.json'
 
+import ViewPage from '@/components/view/ViewPage'
+
+export default {
+  components: {
+    ViewPage
+  },
+  computed: {
+    content: function () {
+      return content
+    }
+  }
 }
 </script>
