@@ -1,6 +1,6 @@
 <template>
   <ViewPage header="About">
-    <span>{{ content.title }}</span>
+    <p>{{ content.title }}</p>
   </ViewPage>
 </template>
 
