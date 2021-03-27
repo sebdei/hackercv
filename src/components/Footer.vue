@@ -3,17 +3,7 @@
   <footer class="text-center ">
     <!-- Grid container -->
     <div class="container p-4">
-      <!-- Section: Social media -->
-      <section class="mb-4">
-        <!-- Facebook -->
-        <a class="btn btn-primary m-1" href="#!" role="button">Barfoo</a>
-
-        <!-- Twitter -->
-        <a class="btn btn-primary btn-floating m-1" href="#!" role="button">Foobar</a>
-
-        <!-- Google -->
-        <a class="btn btn-primary btn-floating m-1" href="#!" role="button">dwdwdwd</a>
-      </section>
+      <FooterLinks :links="links"/>
     </div>
 
     <!-- Copyright -->
@@ -28,8 +18,19 @@
   <!-- Footer -->
 </template>
 <script>
-export default {
+import FooterLinks from './custom/FooterLinks'
+import links from './custom/footer_links.json'
 
+export default {
+  name: 'Footer',
+  components: {
+    FooterLinks
+  },
+  computed: {
+    links: function () {
+      return links
+    }
+  }
 }
 </script>
 <style scoped>
