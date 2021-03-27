@@ -12,10 +12,10 @@
           <div class="d-flex flex-grow-1 justify-content-end"> 
             <ul class="navbar-nav mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">About</a>
+                <router-link class="nav-link" :to="{name: 'About'}">About</router-link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Projects</a>
+                <router-link class="nav-link" :to="{name: 'Projects'}">Projects</router-link>
               </li>
             </ul>
           </div>
