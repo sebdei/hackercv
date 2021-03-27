@@ -2,7 +2,7 @@
   <div>
     <h2 class="mb-4">{{ header }}</h2>
 
-    <slot></slot> 
+    <slot></slot>
   </div>
 </template>
 

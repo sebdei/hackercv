@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import content from './content.json'
+import content from '@/ressources/views/blog/content.json'
 
 import ViewPage from '@/components/view/ViewPage'
 
