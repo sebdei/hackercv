@@ -1,3 +1,42 @@
 {
-  "title": "Have a look on my awesome projects!"
+  "title": "Have a look on my awesome projects!",
+
+  "projects": [
+    {
+      "id": 1,
+      "title": "Neopixel Web-Controller",
+      "subTitle": "Web-based controller for by Raspberry Pi",
+      "content": "Small smart home project I built to dive into this amazing world"
+    },
+    {
+      "id": 2,
+      "title": "Neopixel Web-Controller",
+      "subTitle": "Web-based controller for by Raspberry Pi",
+      "content": "Small smart home project I built to dive into this amazing world. This is a larger text to text the content thanks."
+    },
+    {
+      "id": 3,
+      "title": "Neopixel Web-Controller",
+      "subTitle": "Web-based controller for by Raspberry Pi",
+      "content": "Small smart home project I built to dive into this amazing world"
+    },
+    {
+      "id": 4,
+      "title": "Neopixel Web-Controller",
+      "subTitle": "Web-based controller for by Raspberry Pi",
+      "content": "Small smart home project I built to dive into this amazing world. This is a larger text to text the content thanks."
+    },
+    {
+      "id": 5,
+      "title": "Neopixel Web-Controller",
+      "subTitle": "Web-based controller for by Raspberry Pi",
+      "content": "Small smart home project I built to dive into this amazing world"
+    },
+    {
+      "id": 6,
+      "title": "Neopixel Web-Controller",
+      "subTitle": "Web-based controller for by Raspberry Pi",
+      "content": "Small smart home project I built to dive into this amazing world. This is a larger text to text the content thanks."
+    }
+  ]
 }
