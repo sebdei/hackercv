@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="d-flex flex-column w-100">
     <Header/>
     
-    <div class="container mb-5">
+    <main class="container mb-5 flex-grow-1">
       <router-view></router-view>
-    </div>
+    </main>
 
     <Footer/>
   </div>
@@ -24,10 +24,18 @@ export default {
 </script>
 
 <style>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   font-size: 1.2em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  display: flex;
+  min-height: 100%;
 }
 </style>
