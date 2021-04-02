@@ -1,12 +1,11 @@
 <template>
   <div class="d-flex flex-column w-100">
-    <Header/>
-    
+    <Header />
     <main class="container mb-5 flex-grow-1">
-      <router-view></router-view>
+      <router-view />
     </main>
 
-    <Footer/>
+    <Footer />
   </div>
 </template>
 

@@ -6,7 +6,7 @@
         <h6 class="card-subtitle mb-3 text-muted">{{ subTitle }}</h6>
 
         <p class="card-text">
-          <slot></slot>
+          <slot />
         </p>
       </div>
     </div>
@@ -15,7 +15,11 @@
 
 <script>
 export default {
-  props: ['content', 'subTitle', 'title']
+  props: {
+    content: String,
+    subTitle: String,
+    title: String
+  }
 }
 </script>
 

@@ -1,14 +1,17 @@
 <template>
   <div>
     <h2 class="mb-4">{{ header }}</h2>
-
-    <slot></slot>
+    <slot />
   </div>
 </template>
 
 <script>
 export default {
-  props: ['header']
+  props: {
+    header: {
+      type: String
+    }
+  }
 }
 </script>
 

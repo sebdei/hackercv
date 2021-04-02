@@ -4,15 +4,20 @@
       <div class="container">
         <h1>Hacker CV</h1>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" />
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <div class="d-flex flex-grow-1 justify-content-end"> 
+        <div id="navbarSupportedContent" class="collapse navbar-collapse">
+          <div class="d-flex flex-grow-1 justify-content-end">
             <ul class="navbar-nav mb-lg-0">
-              <li class="nav-item" :key="view" v-for="view in views">
-                <router-link class="nav-link" :to="{ name: view }">{{ view }}</router-link>
+              <li v-for="view in views" :key="view" class="nav-item">
+                <router-link class="nav-link" :to="{ name: view }">
+                  {{ view }}
+                </router-link>
               </li>
             </ul>
           </div>

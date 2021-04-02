@@ -1,9 +1,11 @@
 <template>
   <ViewPage header="Blog">
-    <p v-html="content.title"/>
+    <p v-html="content.title" />
 
     <div class="row">
-      <Card class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-6" :key="project.id" :subTitle="project.subTitle" :title="project.title" v-for="project in content.articles">
+      <Card v-for="project in content.articles"
+            :key="project.id" :sub-title="project.subTitle"
+            :title="project.title" class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-6">
         {{ project.content }}
       </Card>
     </div>

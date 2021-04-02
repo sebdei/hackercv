@@ -1,9 +1,8 @@
 <template>
   <footer class="text-center container rounded">
-
     <div v-if="links.length > 0 ">
       <div class="container py-3">
-        <FooterLinks :links="links"/>
+        <FooterLinks :links="links" />
       </div>
     </div>
 
@@ -21,7 +20,6 @@
       <a href="gdpr" class="mx-1 disclaimer">GDPR</a>
     </div>
     <!-- Disclaimer -->
-
   </footer>
 </template>
 <script>
