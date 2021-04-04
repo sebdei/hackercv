@@ -1,14 +1,12 @@
 <template>
-  <div>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title mb-2">{{ title }}</h5>
-        <h6 class="card-subtitle mb-3 text-muted">{{ subTitle }}</h6>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title mb-2">{{ title }}</h5>
+      <h6 class="card-subtitle mb-3 text-muted">{{ subTitle }}</h6>
 
-        <p class="card-text">
-          <slot />
-        </p>
-      </div>
+      <p class="card-text">
+        <slot />
+      </p>
     </div>
   </div>
 </template>
@@ -26,5 +24,9 @@ export default {
 <style scoped>
 .card-body {
   padding: 1.5rem;
+}
+
+.card-subtitle {
+  min-height: 2.5em;
 }
 </style>
