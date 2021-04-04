@@ -1,7 +1,5 @@
 <template>
-  <ViewPage header="About">
-    <p v-html="content.title" />
-  </ViewPage>
+  <ViewPage header="About" :subTitle="content.subTitle" />
 </template>
 
 <script>
