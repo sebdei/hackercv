@@ -20,7 +20,7 @@ export default {
 .grid {
   display: grid;
 
-  grid-gap: 1em;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-gap: 2.5em;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 }
 </style>
