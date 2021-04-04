@@ -1,5 +1,5 @@
 <template>
-  <ViewPage header="About" :subTitle="content.subTitle" />
+  <ViewPage header="About" :sub-title="content.subTitle" />
 </template>
 
 <script>
