@@ -1,5 +1,5 @@
 <template>
-  <ViewPage header="Blog" :subTitle="content.subTitle">
+  <ViewPage title="Blog" :subTitle="content.subTitle">
     <GridContent :items="content.articles">
       <template v-slot:default="itemScope">
         <Card

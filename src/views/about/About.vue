@@ -1,5 +1,5 @@
 <template>
-  <ViewPage header="About" :sub-title="content.subtitle">
+  <ViewPage title="About" :sub-title="content.subTitle">
     <Timeline />
   </ViewPage>
 </template>
