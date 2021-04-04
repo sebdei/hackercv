@@ -1,11 +1,11 @@
 <template>
-  <ViewPage header="Projects">
-    <p v-html="content.title" />
-
-    <div class="row">
-      <Card v-for="project in content.projects" :key="project.id"
-            :sub-title="project.subTitle"
-            :title="project.title" class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-6">
+  <ViewPage header="Projects" :sub-title="content.subTitle">
+    <div>
+      <Card 
+        v-for="project in content.projects" 
+        :key="project.id"
+        :sub-title="project.subTitle"
+        :title="project.title">
         {{ project.content }}
       </Card>
     </div>

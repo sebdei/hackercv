@@ -1,8 +1,7 @@
 <template>
-  <ViewPage header="About">
-    <p v-html="content.title" />
+  <ViewPage header="About" :sub-title="content.subtitle">
+    <Timeline />
   </ViewPage>
-  <Timeline />
 </template>
 
 <script>
@@ -14,7 +13,7 @@ import Timeline from '@/components/Timeline'
 export default {
   components: {
     Timeline,
-    ViewPage,
+    ViewPage
   },
   computed: {
     content: function () {

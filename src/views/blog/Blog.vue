@@ -1,7 +1,5 @@
 <template>
-  <ViewPage header="Blog">
-    <p v-html="content.title" />
-
+  <ViewPage header="Blog" :subTitle="content.subTitle">
     <div class="row">
       <Card v-for="project in content.articles"
             :key="project.id" :sub-title="project.subTitle"
