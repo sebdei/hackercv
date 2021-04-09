@@ -1,6 +1,8 @@
 <template>
   <h4>{{ title }}</h4>
-  {{ text }}
+  <div class="timeline-post">
+    {{ text }}
+  </div>
 </template>
 <script>
 
@@ -20,5 +22,8 @@ export default {
 }
 </script>
 <style scoped>
+.timeline-post {
+  font-size: 0.9em;
+}
 </style>
 

@@ -1,24 +1,13 @@
+/* Inspired by https://www.w3schools.com/howto/howto_css_timeline.asp */
 <template>
-  <section>
-    <div id="line" />
-    <div v-for="(post, index) in posts" :key="post.title" class="row mb-5">
-      <div v-if="index % 2 === 0" class="row">
-        <div class="col-sm-5 text-end">
-          <TimelinePost :title="post.title" :text="post.text" />
-        </div>
-        <div class="col-sm-2 text-center rounded-circle border border-dark date">
-          {{ post.year }}
-        </div>
-        <div class="col-sm-5" />
+  <section id="timeline">
+    <!-- <div id="line" /> -->
+    <div v-for="(post, index) in posts" :key="post.title" class="mb-5">
+      <div v-if="index % 2 === 0" class="timeline-post post-left">
+        <TimelinePost :title="post.title" :text="post.text" />
       </div>
-      <div v-else class="row">
-        <div class="col-sm-5" />
-        <div class="col-sm-2 text-center rounded-circle border border-dark date">
-          {{ post.year }}
-        </div>
-        <div class="col-sm-5">
-          <TimelinePost :title="post.title" :text="post.text" />
-        </div>
+      <div v-else class="timeline-post post-right">
+        <TimelinePost :title="post.title" :text="post.text" />
       </div>
     </div>
   </section>
@@ -40,21 +29,72 @@ export default {
 }
 </script>
 <style scoped>
-#line {
-  left: calc(50% - 10px); /*TODO: fix scrollbar extra width*/
+#timeline {
+  position: relative;
+  /* max-width: 1200px; */
+  /* margin: 0 auto; */
+}
+
+#timeline::after {
+  left: 50%; /*TODO: fix scrollbar extra width*/
   position: absolute;
-  width: 3px;
-  height: 500px; /*TODO: calculate*/
+  width: 4px;
+  top: 0;
+  bottom: 0;
   background: #c7c7c7;
   content: '';
   z-index: -1;
 }
-.date {
-  display: inline-block;
-  margin: auto;
-  width: 80px;
-  background-color: white;
-  padding-top: 20px;
-  padding-bottom: 20px;
+
+.timeline-post {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
 }
+
+
+/* Place the container to the right */
+.post-right {
+  left: 50%;
+}
+
+/* The dots  */
+.timeline-post::after {
+  position: absolute;
+  content: '';
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.post-right::after {
+  left: -16px;
+}
+
+@media screen and (max-width: 600px) {
+/* Place the timelime to the left */
+  #timeline::after {
+    left: 31px;
+  }
+
+  .timeline-post {
+    width: 100%;
+    padding-left: 70px;
+  }
+
+  .timeline-post::after {
+    left: 16px;
+  }
+
+  .post-left, .post-right {
+    left: 0;
+  }
+}
+
 </style>
