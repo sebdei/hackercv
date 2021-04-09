@@ -28,6 +28,15 @@ html, body {
   margin: 0;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   font-size: 1.2em;
