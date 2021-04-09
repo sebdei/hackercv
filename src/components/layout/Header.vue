@@ -2,7 +2,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light my-5">
       <div class="container">
-        <h1>Hacker CV</h1>
+        <h1 class="headline">Hacker CV</h1>
 
         <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -36,3 +36,38 @@ export default {
   }
 }
 </script>
+
+<style>
+.headline {
+  position: relative;
+}
+.headline:after {
+  content: "";
+  background: black;
+  position: absolute;
+  top: -10px;
+  right: -22px;
+  /* padding-right: 6px; */
+  height: 80%;
+  width: 6px;
+}
+.headline:before {
+  content: "";
+  background: black;
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  padding-top: 6px;
+  width: 45%;
+  height: 1px;
+}
+.headline:hover {
+  color: #c90e00;
+}
+
+.headline:hover:before, .headline:hover:after {
+  background: #c90e00;
+}
+
+
+</style>

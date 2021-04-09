@@ -29,4 +29,9 @@ export default {
 .card-subtitle {
   min-height: 2.5em;
 }
+
+.card:hover {
+  border: 2px solid #c90e00;
+  margin: -1px;
+}
 </style>

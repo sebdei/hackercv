@@ -65,7 +65,7 @@ export default {
   content: '';
   right: -17px;
   background-color: white;
-  border: 4px solid #FF9F55;
+  border: 4px solid #c90e00;
   top: 15px;
   width: 32px;
   height: 32px;
