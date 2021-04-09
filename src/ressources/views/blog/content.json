@@ -2,24 +2,19 @@
   "subTitle": "Welcome to my block!",
   "articles": [
     {
-      "id": 1,
-      "title": "Blog Poste 1",
-      "subTitle": "Blog Poste 1"
+      "fileName": "2021-04-10_smarties_are_awesome",
+      "title": "Smarties are awesome",
+      "subTitle": "Why smarties are so awesome"
     },
     {
-      "id": 2,
-      "title": "Blog Poste 2",
-      "subTitle": "Blog Poste 2"
+      "fileName": "2021-04-09_what_you_can_and_cannot_with_tuna",
+      "title": "What you can and cannot with tuna",
+      "subTitle": "Ever wondered?"
     },
     {
-      "id": 3,
-      "title": "Blog Poste 3",
-      "subTitle": "Blog Poste 3"
-    },
-    {
-      "id": 4,
-      "title": "Blog Poste 4",
-      "subTitle": "Blog Poste 4"
+      "fileName": "2021-04-08_how_to_be_smart",
+      "title": "How to be smart",
+      "subTitle": "Ever wondered how you can be better than everybody in this world? Here is how!"
     }
   ]
 }
