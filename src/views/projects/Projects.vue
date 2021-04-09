@@ -1,5 +1,5 @@
 <template>
-  <ViewPage title="Projects" :sub-title="content.subTitle">
+  <View title="Projects" :sub-title="content.subTitle">
     <GridContent :items="content.projects">
       <template v-slot:default="itemScope">
         <Card
@@ -10,7 +10,7 @@
         </Card>
       </template>
     </GridContent>
-  </ViewPage>
+  </View>
 </template>
 
 <script>
@@ -18,13 +18,13 @@ import content from '@/ressources/views/projects/content.json'
 
 import Card from '@/components/card/Card'
 import GridContent  from '@/components/layout/GridContent'
-import ViewPage from '@/components/layout/View'
+import View from '@/components/layout/View'
 
 export default {
   components: {
     Card,
     GridContent,
-    ViewPage
+    View
   },
   computed: {
     content: function () {
