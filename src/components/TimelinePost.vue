@@ -24,7 +24,6 @@ export default {
 <style scoped>
 .timeline-post {
   font-size: 0.9em;
-  color: var(--text);
 }
 </style>
 
