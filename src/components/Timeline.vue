@@ -41,9 +41,9 @@ export default {
   width: 4px;
   top: 0;
   bottom: 0;
-  background: #c7c7c7;
+  background: var(--subtle);
   content: '';
-  z-index: -1;
+  z-index: 1;
 }
 
 .timeline-post {
@@ -64,13 +64,13 @@ export default {
   position: absolute;
   content: '';
   right: -17px;
-  background-color: white;
+  background-color: var(--background);
   border: 4px solid var(--accent);
   top: 15px;
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .post-right::after {

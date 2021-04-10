@@ -24,9 +24,11 @@ export default {
 <style scoped>
 .card-body {
   padding: 1.5rem;
+  color: var(--text);
 }
 
 .card-subtitle {
   min-height: 2.5em;
+  color: var(--subtle);
 }
 </style>

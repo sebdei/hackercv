@@ -26,9 +26,26 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;400;500&display=swap');
 
 :root {
-  --background: #ffffff;
-  --headlines: #212529;
+  /* --background: #ffffff; */
+  /* --headlines: #212529; */
+  /* --text: #212529; */
+  /* --accent: #c90e00; */
+  /* --subtle: #6c757d; */
+
+  /* --footer-background: #454545; */
+  /* --footer-text: #eeeeee; */
+  /* --footer-subtle: #888888; */
+
+  --background: #131316;
+  --headlines: #dddddd;
+  --text: #dddddd;
   --accent: #c90e00;
+  --subtle: #ff0000;
+
+  --footer-background: #dddddd;
+  --footer-text: #333333;
+  --footer-subtle: #aaaaaa;
+
 }
 
 html, body {

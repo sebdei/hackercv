@@ -40,12 +40,12 @@ export default {
 </script>
 <style scoped>
   footer {
-    background-color: #454545;
-    color: #eeeeee;
+    background-color: var(--footer-background);
+    color: var(--footer-text);
   }
 
   .disclaimer:link {
-    color: #888888;
+    color: var(--footer-subtle);
     font-size: 0.7em;
   }
 </style>

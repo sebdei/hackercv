@@ -36,3 +36,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.nav-link {
+  color: var(--subtle) important!;
+}
+</style>
