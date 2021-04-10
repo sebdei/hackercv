@@ -59,13 +59,13 @@ export default {
   left: 50%;
 }
 
-/* The dots  */
+/* Timeline dots  */
 .timeline-post::after {
   position: absolute;
   content: '';
   right: -17px;
   background-color: white;
-  border: 4px solid #FF9F55;
+  border: 4px solid var(--accent);
   top: 15px;
   width: 32px;
   height: 32px;
