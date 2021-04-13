@@ -2,7 +2,9 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light my-5">
       <div class="container">
-        <h1>Hacker CV</h1>
+        <router-link :to="{ name: 'Home' }">
+          <h1>Hacker CV</h1>
+        </router-link>
 
         <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
