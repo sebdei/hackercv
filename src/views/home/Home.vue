@@ -25,10 +25,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.persona {
-  height: 300px;
-  width: 300px;
-}
-</style>
