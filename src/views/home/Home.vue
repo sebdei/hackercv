@@ -7,10 +7,8 @@
           {{ content.subTitle }}
         </p>
       </div>
-      <div class="col-10 col-md-5 col-lg-4">
-        <div class="d-flex justify-content-end">
-          <img class="img-fluid" :src="content.avatarUrl" alt="hacker" />
-        </div>
+      <div class="col-12 col-md-5 col-lg-3">
+        <img class="img-fluid" :src="content.avatarUrl" alt="hacker" />
       </div>
     </div>
   </div>
