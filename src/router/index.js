@@ -17,9 +17,14 @@ const routes = [
   { path: "/projects", name: "Projects", component: Projects }
 ]
 
+const scrollBehavior = function (to, from, savedPosition) {
+  return savedPosition || { top: 0 }
+}
+
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior
 })
 
 export default router
