@@ -1,5 +1,5 @@
 <template>
-  <component :is="blogpostComponent" v-if="blogpostComponent"/>
+  <component :is="blogpostComponent" v-if="blogpostComponent" />
 </template>
 
 <script>

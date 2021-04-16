@@ -28,7 +28,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
 #timeline {
   position: relative;
   /* max-width: 1200px; */
@@ -41,9 +41,9 @@ export default {
   width: 4px;
   top: 0;
   bottom: 0;
-  background: #c7c7c7;
+  background: $subtle;
   content: '';
-  z-index: -1;
+  z-index: 1;
 }
 
 .timeline-post {
@@ -59,18 +59,18 @@ export default {
   left: 50%;
 }
 
-/* The dots  */
+/* Timeline dots  */
 .timeline-post::after {
   position: absolute;
   content: '';
   right: -17px;
-  background-color: white;
-  border: 4px solid #FF9F55;
+  background-color: $background;
+  border: 4px solid $accent;
   top: 15px;
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .post-right::after {

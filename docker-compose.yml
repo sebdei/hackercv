@@ -6,6 +6,7 @@ services:
     container_name: hackercv
     ports:
       - 8080:8080
+    #  mount everything, except for node_modules
     volumes:
-      - ./public/:/usr/src/app/public
-      - ./src/:/usr/src/app/src
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules/

@@ -22,12 +22,15 @@ export default {
 }
 </script>
 
-<style>
+
+<style lang="scss">
+@import 'bootstrap/scss/bootstrap.scss';
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;400;500&display=swap');
 
 html, body {
   height: 100%;
   margin: 0;
+  background-color: $background; 
 }
 
 a {
@@ -52,5 +55,4 @@ a:hover {
 h1, h2, h3, h4, h5 {
   font-family: "Roboto Mono";
 }
-
 </style>
