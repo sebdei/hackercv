@@ -36,14 +36,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-a.nav-link {
-    color: var(--subtle) !important;
-}
-
-a.nav-link:focus, a.nav-link:hover {
-    color: var(--subtle-hover) !important;
-}
-</style>

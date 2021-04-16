@@ -24,32 +24,13 @@ export default {
 
 
 <style lang="scss">
-@import './assets/styles/custom.scss';
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import 'bootstrap/scss/bootstrap.scss';
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;400;500&display=swap');
-:root {
-  --background: #ffffff;
-  --accent: #c90e00;
-  --subtle: #6c757d;
-
-  --footer-background: #454545;
-  --footer-text: #eeeeee;
-  --footer-subtle: #888888;
-
-  /* --background: #131316; */
-  /* --accent: #c90e00; */
-  /* --subtle: #999999; */
-
-  /* --footer-background: #fcfcfc; */
-  /* --footer-text: #333333; */
-  /* --footer-subtle: #aaaaaa; */
-
-}
 
 html, body {
   height: 100%;
   margin: 0;
-  background-color: var(--background); 
+  background-color: $background; 
 }
 
 a {

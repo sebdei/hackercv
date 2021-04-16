@@ -21,14 +21,15 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+
 .card-body {
   padding: 1.5rem;
-  background-color: var(--background);
+  background-color: $background;
 }
 
-.card-subtitle {
+.text-muted {
   min-height: 2.5em;
-  color: var(--subtle) !important;
+  color: $subtle !important;
 }
 </style>

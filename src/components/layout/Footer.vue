@@ -38,14 +38,14 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
   footer {
-    background-color: var(--footer-background);
-    color: var(--footer-text);
+    background-color: $footer-background;
+    color: $footer-text;
   }
 
   .disclaimer:link {
-    color: var(--footer-subtle);
+    color: $footer-subtle;
     font-size: 0.7em;
   }
 </style>

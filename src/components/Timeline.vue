@@ -28,7 +28,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
 #timeline {
   position: relative;
   /* max-width: 1200px; */
@@ -41,7 +41,7 @@ export default {
   width: 4px;
   top: 0;
   bottom: 0;
-  background: var(--subtle);
+  background: $subtle;
   content: '';
   z-index: 1;
 }
@@ -64,8 +64,8 @@ export default {
   position: absolute;
   content: '';
   right: -17px;
-  background-color: var(--background);
-  border: 4px solid var(--accent);
+  background-color: $background;
+  border: 4px solid $accent;
   top: 15px;
   width: 32px;
   height: 32px;
