@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import content from '@/ressources/views/blog/content.json'
-
 import Card from '@/components/card/Card'
 import GridContent from '@/components/layout/GridContent'
 import View from '@/components/layout/View'
+
+import axios from "axios";
 
 export default {
   components: {
@@ -28,10 +28,20 @@ export default {
     GridContent,
     View
   },
-  computed: {
-    content: function () {
-      return content
-    }
-  }
+  data() {
+    return {
+      content: {}
+    };
+  },
+  methods: {
+   getContent() {
+     axios
+       .get(this.content_api + 'content.json')
+       .then(response => (this.content = response.data));
+   }
+ },
+ mounted(){
+  this.getContent();
+ }
 }
 </script>
