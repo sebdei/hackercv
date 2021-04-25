@@ -1,7 +1,7 @@
 <template>
   <div class="grid">
-    <div :key="item.id" v-for="item in items">
-      <slot v-bind:item="item" />
+    <div v-for="item in items" :key="item.id">
+      <slot :item="item" />
     </div>
   </div>
 </template>
@@ -10,6 +10,7 @@
 export default {
   props: {
     items: {
+      default: () => [],
       type: Array
     }
   }
