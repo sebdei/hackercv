@@ -3,7 +3,7 @@
     <h2 class="mb-4">
       {{ title }}
     </h2>
-    <p class="mb-5" v-if="subTitle">
+    <p v-if="subTitle" class="mb-5">
       {{ subTitle }}
     </p>
     
@@ -15,9 +15,11 @@
 export default {
   props: {
     subTitle: {
+      default: '',
       type: String
     },
     title: {
+      default: '',
       type: String
     }
   }

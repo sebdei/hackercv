@@ -5,14 +5,14 @@
     </span>
 
     <div class="link-icon mx-1">
-      <a :href="content.link_github" v-if="content.link_github">
-        <img class="img-fluid" src="./icons/github.svg" />
+      <a v-if="content.link_github" :href="content.link_github">
+        <img class="img-fluid" src="./icons/github.svg">
       </a>
     </div>
 
     <div class="link-icon mx-1">
-      <a :href="content.link_linkedin" v-if="content.link_linkedin">
-        <img class="img-fluid" src="./icons/linkedin.png" />
+      <a v-if="content.link_linkedin" :href="content.link_linkedin">
+        <img class="img-fluid" src="./icons/linkedin.png">
       </a>
     </div>
   </div>
