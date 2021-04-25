@@ -17,18 +17,11 @@
 </template>
 
 <script>
-import content from '@/ressources/components/layout/footer/content.json'
-
 import FindMe from './FindMe'
 
 export default {
   components: {
     FindMe
-  },
-  computed: {
-    content: function () {
-      return content
-    }
   }
 }
 </script>
