@@ -4,14 +4,14 @@
       Find me
     </span>
 
-    <div class="link-icon mx-1">
-      <a v-if="content.link_github" :href="content.link_github">
+    <div v-if="content.link_github" class="link-icon mx-1">
+      <a :href="content.link_github">
         <img class="img-fluid" src="./icons/github.svg">
       </a>
     </div>
 
-    <div class="link-icon mx-1">
-      <a v-if="content.link_linkedin" :href="content.link_linkedin">
+    <div v-if="content.link_github" class="link-icon mx-1">
+      <a :href="content.link_linkedin">
         <img class="img-fluid" src="./icons/linkedin.png">
       </a>
     </div>
