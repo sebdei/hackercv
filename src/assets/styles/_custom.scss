@@ -43,3 +43,16 @@ $border-code: 1px solid #eaeaea;
 // // Markdown:
 // $background-code: #131316;
 // $border-code: 1px solid #dadada;
+
+// marked lib doesn't support scoped style, hence we define it here.
+// we use #markdown-content ancestor to prevent side effects
+#markdown-content pre {
+    background-color: $background-code;
+    padding: 20px;
+    border: $border-code;
+    border-radius: 4px;
+}
+
+#markdown-content .token.operator {
+    background: inherit;
+}

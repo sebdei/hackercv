@@ -1,5 +1,5 @@
 <template>
-  <div v-html="compiledMarkdown" />
+  <div id="markdown-content" v-html="compiledMarkdown" />
 </template>
 
 <script>
@@ -7,9 +7,12 @@
 
 import axios from 'axios'
 import marked from 'marked'
-import highlight from 'highlight.js';
-/* import 'highlight.js/styles/github.css'; */
-import 'highlight.js/styles/solarized-dark.css';
+import Prism from 'prismjs'
+
+import 'prismjs/components/prism-java'
+import 'prismjs/components/prism-javascript'
+import 'prismjs/components/prism-python'
+import 'prismjs/themes/prism.css'
 
 export default {
   data() {
@@ -22,8 +25,22 @@ export default {
       // check if content is loaded
       if (typeof this.content === "string") {
         return marked(this.content, {
-          highlight(md) {
-            return highlight.highlightAuto(md).value
+          highlight(md, lang) {
+            //TODO: extract if code
+            let prismLang = '';
+
+            switch(lang) {
+              case 'java':
+                prismLang = Prism.languages.java;
+                break;
+              case 'python':
+                prismLang = Prism.languages.python;
+                break;
+              default:
+                prismLang = Prism.languages.javascript;
+            }
+
+            return Prism.highlight(md, prismLang, lang);
           }
         });
       }
@@ -43,13 +60,3 @@ export default {
   }
 }
 </script>
-
-// scoped sytle doesn't work with highlight.js for unknown reason
-<style module lang="scss">
-  pre {
-    background-color: $background-code;
-    padding: 20px;
-    border: $border-code;
-    border-radius: 4px;
-  }
-</style>
