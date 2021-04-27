@@ -5,7 +5,6 @@
 <script>
 /* import NotFound404 from '@/components/error/NotFound404' */
 
-import axios from 'axios'
 import marked from 'marked'
 import Prism from 'prismjs'
 
@@ -44,18 +43,27 @@ export default {
           }
         });
       }
-      return 'Try loading content...';
+      return '<div class="text-center"><div class="spinner-border" role="status"></div></div>';
     }
   },
-  mounted(){
-    this.getContent(this.$route.params.fileName);
+  mounted() {
+    this.getContent(this.$route.params.fileName).catch(error => {
+      console.log(error.message);
+      /* TODO: throw 400 if post doesnt exist or 500 in case of API error */
+    });
   },
   methods: {
-    getContent(fileName) {
-     axios
-       .get(this.content_api + 'posts/' + fileName + '.md')
-       .then(response => (this.content = response.data));
-       /* TODO: add error 404 */
+    getContent: async function (fileName) {
+      let path = `${this.content_api}/posts/${fileName}.md`;
+      const response = await fetch(path);
+
+      if (!response.ok) {
+        const message = `An error has occured: ${response.status}`;
+        throw new Error(message);
+      }
+
+      const text = await response.text();
+      this.content = text;
     }
   }
 }
