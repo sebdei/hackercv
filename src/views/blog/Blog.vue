@@ -16,8 +16,6 @@
 </template>
 
 <script>
-import content from '@/ressources/views/blog/content.json'
-
 import Card from '@/components/card/Card'
 import GridContent from '@/components/layout/GridContent'
 import View from '@/components/layout/View'
@@ -28,10 +26,30 @@ export default {
     GridContent,
     View
   },
-  computed: {
-    content: function () {
-      return content
-    }
+  data() {
+    return {
+      content: {}
+    };
+  },
+  mounted() {
+    this.getContent().catch(error => {
+      console.log(error.message);
+      /* TODO: throw 400 if post doesnt exist or 500 in case of API error */
+    });
+  },
+  methods: {
+    getContent: async function () {
+      let path = `${this.content_api}/content.json`;
+      const response = await fetch(path);
+
+      if (!response.ok) {
+        const message = `An error has occured: ${response.status}`;
+        throw new Error(message);
+      }
+
+      const text = await response.json();
+      this.content = text;
+   }
   }
 }
 </script>

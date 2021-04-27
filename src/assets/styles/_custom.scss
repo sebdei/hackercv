@@ -17,6 +17,10 @@ $footer-subtle: #888888;
 $navbar-light-color: #999999; /* Bootstrap */
 $navbar-light-hover-color: #eeeeee; /* Bootstrap */
 
+// Markdown:
+$background-code: #eaeaea;
+$border-code: 1px solid #eaeaea;
+
 // Dark mode example:
 
 // // General:
@@ -35,3 +39,20 @@ $navbar-light-hover-color: #eeeeee; /* Bootstrap */
 // // Links:
 // $navbar-light-color: #999999; /* Bootstrap */
 // $navbar-light-hover-color: #eeeeee; /* Bootstrap */
+
+// // Markdown:
+// $background-code: #131316;
+// $border-code: 1px solid #dadada;
+
+// marked lib doesn't support scoped style, hence we define it here.
+// we use #markdown-content ancestor to prevent side effects
+#markdown-content pre {
+    background-color: $background-code;
+    padding: 20px;
+    border: $border-code;
+    border-radius: 4px;
+}
+
+#markdown-content .token.operator {
+    background: inherit;
+}
