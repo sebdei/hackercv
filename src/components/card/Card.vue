@@ -14,9 +14,18 @@
 <script>
 export default {
   props: {
-    content: String,
-    subTitle: String,
-    title: String
+    content: {
+      default: '',
+      type: String
+    },
+    subTitle: {
+      default: '',
+      type: String
+    },
+    title: {
+      default: '',
+      type: String
+    }
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
-  <View title="Blog" :subTitle="content.subTitle">
+  <View title="Blog" :sub-title="content.subTitle">
     <GridContent :items="content.articles">
-      <template v-slot:default="itemScope">
+      <template #default="itemScope">
         <router-link :to="{ name: 'BlogDetails', params: { fileName: itemScope.item.fileName }}">
           <Card
             class="d-flex h-100"

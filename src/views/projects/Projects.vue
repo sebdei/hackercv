@@ -1,7 +1,7 @@
 <template>
   <View title="Projects" :sub-title="content.subTitle">
     <GridContent :items="content.projects">
-      <template v-slot:default="itemScope">
+      <template #default="itemScope">
         <Card
           class="d-flex h-100"
           :sub-title="itemScope.item.subTitle"
