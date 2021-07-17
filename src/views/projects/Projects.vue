@@ -1,5 +1,5 @@
 <template>
-  <View title="Projects" :sub-title="content.subTitle">
+  <View title="Projects" sub-title="Welcome to my block!">
     <GridContent :items="items">
       <template #default="itemScope">
         <Card
