@@ -1,12 +1,14 @@
 <template>
   <View title="Projects" :sub-title="content.subTitle">
-    <GridContent :items="content.projects">
+    <GridContent :items="items">
       <template #default="itemScope">
         <Card
           class="d-flex h-100"
           :sub-title="itemScope.item.subTitle"
           :title="itemScope.item.title">
-          {{ itemScope.item.content }}
+
+          <div v-html="itemScope.item.text"/>
+          {{ itemScope.item.description }}
         </Card>
       </template>
     </GridContent>
@@ -14,7 +16,7 @@
 </template>
 
 <script>
-import content from '@/ressources/views/projects/content.json'
+import apiClient from '@/service/api'
 
 import Card from '@/components/card/Card'
 import GridContent  from '@/components/layout/GridContent'
@@ -26,9 +28,18 @@ export default {
     GridContent,
     View
   },
-  computed: {
-    content: function () {
-      return content
+  data () {
+    return {
+      items: []
+    }
+  },
+  mounted () {
+    this.setItems()
+  },
+  methods: {
+    setItems: async function () {
+      const response = await apiClient.getEntries()
+      this.items = response.items.map(item => item.fields)
     }
   }
 }
