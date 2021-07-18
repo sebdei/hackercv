@@ -1,18 +1,18 @@
 <template>
-  <View title="About" :sub-title="content.subTitle">
+  <View :title="item.title" :sub-title="item.subTitle" v-if="item">
     <Timeline class="mb-6" />
 
     <div class="d-flex justify-content-center">
-      <CtaLink :title="content.ctaTitle" :to="{ name: 'Projects' }" />
+      <CtaLink :title="item.ctaTitle" :to="{ name: 'Projects' }" />
     </div>
   </View>
 </template>
 
 <script>
-import content from '@/ressources/views/about/content.json'
+import api from '@/service/api'
 
 import CtaLink from '@/components/buttons/CtaLink'
-import Timeline from '@/components/Timeline'
+import Timeline from './timeline/Timeline'
 import View from '@/components/layout/View'
 
 export default {
@@ -21,9 +21,18 @@ export default {
     Timeline,
     View
   },
-  computed: {
-    content: function () {
-      return content
+  data () {
+    return {
+      item: null
+    }
+  },
+  mounted () {
+    this.setItem()
+  },
+  methods: {
+    setItem: async function () {
+      const items = await api.getItems('about')
+      this.item = items?.length && items[0]
     }
   }
 }

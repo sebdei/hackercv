@@ -2,32 +2,44 @@
 <template>
   <section id="timeline">
     <!-- <div id="line" /> -->
-    <div v-for="(post, index) in posts" :key="post.title" class="mb-5">
+    <div v-for="(item, index) in items" :key="item.title" class="mb-5">
       <div v-if="index % 2 === 0" class="timeline-post post-left">
-        <TimelinePost :title="post.title" :text="post.text" />
+        <TimelinePost :title="item.title" :text="item.text" />
       </div>
+
       <div v-else class="timeline-post post-right">
-        <TimelinePost :title="post.title" :text="post.text" />
+        <TimelinePost :title="item.title" :text="item.text" />
       </div>
     </div>
   </section>
 </template>
+
 <script>
+import api from '@/service/api'
+
 import TimelinePost from './TimelinePost'
-import posts from '@/ressources/components/timeline.json'
 
 export default {
   name: 'Timeline',
   components: {
     TimelinePost
   },
-  computed: {
-    posts: function () {
-      return posts
+  data () {
+    return {
+      items: null
+    }
+  },   
+  mounted () {
+    this.setItems()
+  },
+  methods: {
+    setItems: async function () {
+      this.items = await api.getItems('timelineEntries')
     }
   }
 }
 </script>
+
 <style scoped lang="scss">
 #timeline {
   position: relative;
