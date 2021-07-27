@@ -50,6 +50,8 @@ a:hover {
 
   display: flex;
   min-height: 100%;
+
+  overflow-y: scroll;
 }
 
 h1, h2, h3, h4, h5 {
