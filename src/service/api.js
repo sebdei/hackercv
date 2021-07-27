@@ -1,8 +1,8 @@
 import { createClient } from 'contentful'
 
 const client = createClient({
-  accessToken: 'LtstPIIgqqkttUPiqo_U7B47_D5wVCxmQzXF9WXSD2E',
-  space: 'ma4hmf4ocmnf'
+  accessToken: '',
+  space: ''
 })
 
 export async function getItems(contentType) {
