@@ -6,17 +6,19 @@
           <h1>Hacker CV</h1>
         </router-link>
 
-        <button class="navbar-toggler" type="button"
-                data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon" />
-        </button>
+        <div
+          id="button"
+          ref="button"
+          @click="toggleMobileNav"
+          :class="{ light: mode === 'light', dark: mode === 'dark' }"
+        >
+          <span />
+        </div>
 
-        <div id="navbarSupportedContent" class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse">
           <div class="d-flex flex-grow-1 justify-content-end">
             <ul class="navbar-nav mb-lg-0">
-              <li v-for="view in views" :key="view" class="nav-item">
+              <li v-for="view in views" :key="view">
                 <router-link class="nav-link" :to="{ name: view }">
                   {{ view }}
                 </router-link>
@@ -27,14 +29,243 @@
       </div>
     </nav>
   </header>
+
+  <div
+    id="mobileNavOverlay"
+    ref="mobileNavOverlay"
+    :class="{ light: mode === 'light', dark: mode === 'dark' }"
+  >
+    <div class="blur"></div>
+    <ul class="mb-lg-0">
+      <li v-if="renderHomeItemInMobileNav">
+        <router-link
+          class="nav-link"
+          :to="{ name: 'Home' }"
+          :class="{ active: 'Home' === currentRoute }"
+          @click="toggleMobileNav"
+        >
+          {{ "Home" }}
+        </router-link>
+      </li>
+      <li v-for="view in views" :key="view">
+        <router-link
+          class="nav-link"
+          :to="{ name: view }"
+          :class="{ active: view === currentRoute }"
+          @click="toggleMobileNav"
+        >
+          {{ view }}
+        </router-link>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
-export default {
-  computed: {
-    views: function () {
-      return ['About', 'Projects', 'Blog']
+  export default {
+    props: {
+      /**
+       * As the top left h1-title in the navigation is not reachable within the mobile navigation overlay, you
+       * may want to additionally render an navigation item for the "Home" route in the mobile navigation overlay.
+       *
+       * Defaults to true.
+       */
+      renderHomeItemInMobileNav: {
+        type: Boolean,
+        default: true,
+      },
+      /**
+       * You can choose between a light mode and a dark mode.
+       * For now, the mode only applies to the mobile navigation overlay.
+       *
+       * Defaults to "light".
+       */
+      mode: {
+        type: String,
+        validator: (value) => ["light", "dark"].includes(value),
+        default: "light",
+      },
+    },
+    data: function () {
+      return {
+        isMobileNavActive: false,
+      }
+    },
+    computed: {
+      views: function () {
+        return ["About", "Projects", "Blog"]
+      },
+      currentRoute: {
+        get() {
+          return this.$route.name
+        },
+      },
+    },
+    watch: {
+      /** Disables scrolling while mobile navigation overlay is shown. */
+      isMobileNavActive: function (currentValue) {
+        document.documentElement.style.overflow = currentValue
+          ? "hidden"
+          : "auto"
+      },
+    },
+    methods: {
+      toggleMobileNav: function () {
+        this.$refs.button.classList.toggle("active")
+        this.$refs.mobileNavOverlay.classList.toggle("active")
+        this.isMobileNavActive = !this.isMobileNavActive
+      },
+    },
+  }
+</script>
+
+<style scoped lang="scss">
+  @media (min-width: 992px) {
+    #button,
+    #mobileNavOverlay {
+      display: none;
     }
   }
-}
-</script>
+
+  .light {
+    &#button.active {
+      span {
+        &:before,
+        &:after {
+          background-color: #999;
+        }
+      }
+    }
+
+    &#mobileNavOverlay {
+      background: white;
+      ul li {
+        color: #999;
+        a {
+          transition: color ease 0.2s;
+          &.active {
+            color: #eee;
+          }
+          &:hover {
+            color: #eee;
+          }
+        }
+      }
+    }
+  }
+
+  .dark {
+    &#button.active {
+      span {
+        &:before,
+        &:after {
+          background-color: white;
+        }
+      }
+    }
+
+    &#mobileNavOverlay {
+      background: black;
+      ul li {
+        color: white;
+        a {
+          transition: color ease 0.2s;
+          &.active {
+            color: #999;
+          }
+          &:hover {
+            color: #999;
+          }
+        }
+      }
+    }
+  }
+
+  #button {
+    width: 35px;
+    height: 25px;
+    cursor: pointer;
+    transform: translateX(0);
+    z-index: 999;
+
+    span {
+      top: 10px;
+      transition: all 50ms ease-out;
+
+      &:before,
+      &:after {
+        transition: all 250ms ease-out;
+      }
+      &:before {
+        top: -10px;
+      }
+      &:after {
+        bottom: -10px;
+      }
+    }
+
+    span,
+    span:before,
+    span:after {
+      position: absolute;
+      display: block;
+      height: 3px;
+      width: 35px;
+      content: "";
+      cursor: pointer;
+      background: #999;
+    }
+
+    &.active {
+      span {
+        background-color: transparent;
+        &:before,
+        &:after {
+          top: 0;
+        }
+        &:before {
+          transform: rotate(45deg);
+        }
+        &:after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  #mobileNavOverlay {
+    position: absolute;
+    z-index: -1;
+    transition: all ease 0.3s;
+
+    &,
+    .blur {
+      opacity: 0;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    &.active {
+      display: block;
+      z-index: 800;
+      &,
+      .blur {
+        opacity: 0.9;
+      }
+    }
+
+    ul {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      list-style-type: none;
+      transform: translateX(-50%) translateY(-50%);
+      li {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1.5em;
+        text-align: center;
+      }
+    }
+  }
+</style>
