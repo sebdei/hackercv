@@ -9,8 +9,8 @@
         <div
           id="button"
           ref="button"
+          :class="mode"
           @click="toggleMobileNav"
-          :class="{ light: mode === 'light', dark: mode === 'dark' }"
         >
           <span />
         </div>
@@ -30,18 +30,16 @@
     </nav>
   </header>
 
-  <div
-    id="mobileNavOverlay"
-    ref="mobileNavOverlay"
-    :class="{ light: mode === 'light', dark: mode === 'dark' }"
-  >
-    <div class="blur"></div>
+  <div id="mobileNavOverlay" ref="mobileNavOverlay" :class="mode">
+    <div class="blur" />
     <ul class="mb-lg-0">
       <li v-if="renderHomeItemInMobileNav">
         <router-link
           class="nav-link"
           :to="{ name: 'Home' }"
-          :class="{ active: 'Home' === currentRoute }"
+          :class="{
+            active: 'Home' === currentRoute,
+          }"
           @click="toggleMobileNav"
         >
           {{ "Home" }}
@@ -51,7 +49,9 @@
         <router-link
           class="nav-link"
           :to="{ name: view }"
-          :class="{ active: view === currentRoute }"
+          :class="{
+            active: view === currentRoute,
+          }"
           @click="toggleMobileNav"
         >
           {{ view }}
@@ -66,7 +66,7 @@
     props: {
       /**
        * As the top left h1-title in the navigation is not reachable within the mobile navigation overlay, you
-       * may want to additionally render an navigation item for the "Home" route in the mobile navigation overlay.
+       * may want to additionally render a navigation item for the "Home" route in the mobile navigation overlay.
        *
        * Defaults to true.
        */
@@ -99,6 +99,9 @@
         get() {
           return this.$route.name
         },
+      },
+      content: function () {
+        return content
       },
     },
     watch: {
@@ -138,11 +141,12 @@
     }
 
     &#mobileNavOverlay {
-      background: white;
+      .blur {
+        background: white;
+      }
       ul li {
         color: #999;
         a {
-          transition: color ease 0.2s;
           &.active {
             color: #eee;
           }
@@ -165,11 +169,12 @@
     }
 
     &#mobileNavOverlay {
-      background: black;
+      .blur {
+        background: black;
+      }
       ul li {
         color: white;
         a {
-          transition: color ease 0.2s;
           &.active {
             color: #999;
           }
@@ -248,7 +253,7 @@
     &.active {
       display: block;
       z-index: 800;
-      &,
+      opacity: 1;
       .blur {
         opacity: 0.9;
       }
@@ -265,6 +270,9 @@
         font-weight: bold;
         font-size: 1.5em;
         text-align: center;
+        a {
+          transition: color ease 0.2s;
+        }
       }
     }
   }
