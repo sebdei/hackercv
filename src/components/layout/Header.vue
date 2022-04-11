@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg navbar-light my-5">
       <div class="container">
         <router-link :to="{ name: 'Home' }">
-          <h1>Hacker CV</h1>
+          <h1>{{ content.headline }}</h1>
         </router-link>
 
         <div
@@ -62,6 +62,8 @@
 </template>
 
 <script>
+  import content from "@/ressources/components/layout/header.json"
+
   export default {
     props: {
       /**
