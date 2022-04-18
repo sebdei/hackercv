@@ -1,15 +1,23 @@
 <template>
   <h4>{{ title }}</h4>
   <div class="timeline-post">
-    {{ text }}
+    {{ subTitle }}
   </div>
+
+  <small>
+    {{ description }}
+  </small>
 </template>
 <script>
 
 export default {
   name: 'TimelinePost',
   props: {
-    text: {
+    description: {
+      type: String,
+      default: ''
+    },
+    subTitle: {
       type: String,
       default: ''
     },
@@ -23,7 +31,6 @@ export default {
 </script>
 <style scoped>
 .timeline-post {
-  font-size: 0.9em;
+  font-size: 1em;
 }
 </style>
-
