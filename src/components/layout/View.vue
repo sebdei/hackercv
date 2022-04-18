@@ -3,10 +3,10 @@
     <h2 class="mb-4">
       {{ title }}
     </h2>
-    <p v-if="subTitle" class="mb-5">
+    <h3 v-if="subTitle" class="mb-5">
       {{ subTitle }}
-    </p>
-    
+    </h3>
+
     <slot />
   </div>
 </template>
