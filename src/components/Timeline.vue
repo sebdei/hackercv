@@ -12,8 +12,9 @@
   </section>
 </template>
 <script>
-import TimelinePost from './TimelinePost'
 import posts from '@/ressources/components/timeline.json'
+
+import TimelinePost from './TimelinePost'
 
 export default {
   name: 'Timeline',
@@ -27,6 +28,7 @@ export default {
   }
 }
 </script>
+
 <style scoped lang="scss">
 #timeline {
   position: relative;
