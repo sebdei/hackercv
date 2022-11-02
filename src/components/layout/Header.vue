@@ -8,8 +8,8 @@
 
         <div
           id="button"
-          ref="button"
-          :class="mode"
+          class="dark d-lg-none"
+          :class="{ active: isMobileNavActive }"
           @click="toggleMobileNav"
         >
           <span />
@@ -30,10 +30,14 @@
     </nav>
   </header>
 
-  <div id="mobileNavOverlay" ref="mobileNavOverlay" :class="mode">
+  <div
+    id="mobileNavOverlay"
+    class="dark d-lg-none"
+    :class="{ active: isMobileNavActive }"
+  >
     <div class="blur" />
     <ul class="mb-lg-0">
-      <li v-if="renderHomeItemInMobileNav">
+      <li>
         <router-link
           class="nav-link"
           :to="{ name: 'Home' }"
@@ -65,29 +69,6 @@
   import content from "@/ressources/components/layout/header.json"
 
   export default {
-    props: {
-      /**
-       * As the top left h1-title in the navigation is not reachable within the mobile navigation overlay, you
-       * may want to additionally render a navigation item for the "Home" route in the mobile navigation overlay.
-       *
-       * Defaults to true.
-       */
-      renderHomeItemInMobileNav: {
-        type: Boolean,
-        default: true,
-      },
-      /**
-       * You can choose between a light mode and a dark mode.
-       * For now, the mode only applies to the mobile navigation overlay.
-       *
-       * Defaults to "light".
-       */
-      mode: {
-        type: String,
-        validator: (value) => ["light", "dark"].includes(value),
-        default: "light",
-      },
-    },
     data: function () {
       return {
         isMobileNavActive: false,
@@ -106,32 +87,18 @@
         return content
       },
     },
-    watch: {
-      /** Disables scrolling while mobile navigation overlay is shown. */
-      isMobileNavActive: function (currentValue) {
-        document.documentElement.style.overflow = currentValue
-          ? "hidden"
-          : "auto"
-      },
-    },
     methods: {
       toggleMobileNav: function () {
-        this.$refs.button.classList.toggle("active")
-        this.$refs.mobileNavOverlay.classList.toggle("active")
         this.isMobileNavActive = !this.isMobileNavActive
+        document.documentElement.style.overflow = this.isMobileNavActive
+          ? "hidden"
+          : "auto"
       },
     },
   }
 </script>
 
 <style scoped lang="scss">
-  @media (min-width: 992px) {
-    #button,
-    #mobileNavOverlay {
-      display: none;
-    }
-  }
-
   .light {
     &#button.active {
       span {
