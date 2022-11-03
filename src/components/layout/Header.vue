@@ -40,6 +40,9 @@
     id="mobileNavOverlay"
     :class="{ active: isMobileNavActive }"
     class="dark d-lg-none"
+    @scroll.prevent
+    @touchmove.prevent
+    @wheel.prevent
   >
     <div class="blur" />
 
@@ -93,10 +96,6 @@ export default {
   methods: {
     toggleMobileNav: function () {
       this.isMobileNavActive = !this.isMobileNavActive
-
-      document.documentElement.style.overflow = this.isMobileNavActive
-          ? "hidden"
-          : "auto"
     }
   }
 }
