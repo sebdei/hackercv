@@ -30,7 +30,7 @@ export default {
 html, body {
   height: 100%;
   margin: 0;
-  background-color: $background; 
+  background-color: $background;
 }
 
 a {

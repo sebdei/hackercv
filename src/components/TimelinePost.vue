@@ -21,9 +21,9 @@ export default {
   }
 }
 </script>
+
 <style scoped>
 .timeline-post {
   font-size: 0.9em;
 }
 </style>
-
