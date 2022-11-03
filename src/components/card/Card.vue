@@ -31,7 +31,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
 .card-body {
   padding: 1.5rem;
   background-color: $background;

@@ -29,6 +29,7 @@ export default {
   }
 }
 </script>
+
 <style scoped>
 .timeline-post {
   font-size: 1em;

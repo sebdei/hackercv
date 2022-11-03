@@ -32,12 +32,10 @@ export default {
 <style scoped lang="scss">
 #timeline {
   position: relative;
-  /* max-width: 1200px; */
-  /* margin: 0 auto; */
 }
 
 #timeline::after {
-  left: 50%; /*TODO: fix scrollbar extra width*/
+  left: 50%;
   position: absolute;
   width: 4px;
   top: 0;
@@ -54,13 +52,10 @@ export default {
   width: 50%;
 }
 
-
-/* Place the container to the right */
 .post-right {
   left: 50%;
 }
 
-/* Timeline dots  */
 .timeline-post::after {
   position: absolute;
   content: '';
@@ -79,7 +74,6 @@ export default {
 }
 
 @media screen and (max-width: 600px) {
-/* Place the timelime to the left */
   #timeline::after {
     left: 31px;
   }
@@ -97,5 +91,4 @@ export default {
     left: 0;
   }
 }
-
 </style>
