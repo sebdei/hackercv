@@ -3,40 +3,34 @@
 
   "projects": [
     {
-      "id": 1,
-      "title": "Foobar awesomeness",
-      "subTitle": "Was gehtn",
-      "content": "Small smart home project I built to dive into this amazing world"
+      "title": "Bloodsuggar logger",
+      "subTitle": "Use my home server as a glucose monitoring system",
+      "content": "On my home server, I built a docker based infrastructure that synchonizes blood sugar values from my glucose monitoring system and helped me managing my glucose. I became a Github contributor for several core project pieces e.g. The IOS app nightguard."
     },
     {
-      "id": 2,
-      "title": "Neopixel Web-Controller",
-      "subTitle": "Web-based controller for by Raspberry Pi",
-      "content": "Small smart home project I built to dive into this amazing world. This is a larger text to text the content thanks."
+      "title": "Staining of Digital Histology Slides Using Generative Adversarial Networks",
+      "subTitle": "Master thesis",
+      "content": "Prostate cancer is considered to be as one of the principal medical problems of the male population. As such I investigated how a tissue sample might virtual stained in order to highlight biological structures of the tissue using AI technology."
     },
     {
-      "id": 3,
-      "title": "Neopixel Web-Controller",
-      "subTitle": "Web-based controller for by Raspberry Pi",
-      "content": "Small smart home project I built to dive into this amazing world"
+      "title": "Mods",
+      "subTitle": "Collection of game mods intended to learn unity",
+      "content": "During the pandemic, I learned aspects of the Unity game engine that eventually led to the creation of several mods using the C# programming language."
     },
     {
-      "id": 4,
-      "title": "Neopixel Web-Controller",
-      "subTitle": "Web-based controller for by Raspberry Pi",
-      "content": "Small smart home project I built to dive into this amazing world. This is a larger text to text the content thanks."
+      "title": "Policy iteration for an energy storage problem",
+      "subTitle": "Seminar paper",
+      "content": "    - Using dynamic programming i.e. solving a Markov Decision Process, I implemented Ronald Howard’s policy iteration algorithm in Python to solve an energy storage optimization problem."
     },
     {
-      "id": 5,
-      "title": "Neopixel Web-Controller",
-      "subTitle": "Web-based controller for by Raspberry Pi",
-      "content": "Small smart home project I built to dive into this amazing world"
+      "title": "HackerCV",
+      "subTitle": "Basic scaffold for this website.",
+      "content": "A simple website scaffold with which you can present yourself as a programmer."
     },
     {
-      "id": 6,
-      "title": "Neopixel Web-Controller",
+      "title": "Neopixel web controller",
       "subTitle": "Web-based controller for by Raspberry Pi",
-      "content": "Small smart home project I built to dive into this amazing world. This is a larger text to text the content thanks."
+      "content": "After I built a lamp for my student apartment by soldering a raspberry pi with Adafruit’s Neopixel, I built a web based controller to adjust it’s color and brightness."
     }
   ]
 }

@@ -3,9 +3,10 @@
     <GridContent :items="content.projects">
       <template #default="itemScope">
         <Card
-          class="d-flex h-100"
           :sub-title="itemScope.item.subTitle"
-          :title="itemScope.item.title">
+          :title="itemScope.item.title"
+          class="d-flex h-100"
+        >
           {{ itemScope.item.content }}
         </Card>
       </template>
