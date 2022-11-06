@@ -82,7 +82,7 @@ export default {
   },
   computed: {
     views: function () {
-      return ["About", "Projects", "Blog"]
+      return ["About", "Projects"]
     },
     currentRoute: {
       get() {
