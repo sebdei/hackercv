@@ -17,6 +17,22 @@
         <img class="img-fluid rounded-circle" :src="content.avatarUrl" alt="hacker">
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <img class="img-fluid mb-3" src="/assets/img/ski.jpg">
+        <img class="img-fluid mb-3" src="/assets/img/vacation.jpg">
+      </div>
+
+      <div class="col-12 col-md-4">
+        <img class="img-fluid" src="/assets/img/ambient.jpg">
+      </div>
+
+      <div class="col-12 col-md-4">
+        <img class="img-fluid mb-3" src="/assets/img/swim.jpg">
+        <img class="img-fluid mb-3" src="/assets/img/ride.jpg">
+      </div>
+    </div>
   </div>
 </template>
 
