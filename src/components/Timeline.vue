@@ -1,6 +1,5 @@
 <template>
   <section id="timeline">
-    <!-- <div id="line" /> -->
     <div v-for="(post, index) in posts" :key="post.title" class="mb-5">
       <div v-if="index % 2 === 0" class="timeline-post post-left">
         <TimelinePost :description="post.description" :title="post.title" :sub-title="post.subTitle" />
