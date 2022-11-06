@@ -33,7 +33,6 @@ export default {
 <style scoped lang="scss">
 .card-body {
   padding: 1.5rem;
-  background-color: $background;
 }
 
 .text-muted {
