@@ -81,17 +81,15 @@ export default {
     }
   },
   computed: {
-    views: function () {
-      return ["About", "Projects"]
-    },
-    currentRoute: {
-      get() {
-        return this.$route.name
-      },
+    currentRoute: function () {
+      return this.$route.name
     },
     content: function () {
       return content
     },
+    views: function () {
+      return ["About", "Projects"]
+    }
   },
   methods: {
     toggleMobileNav: function () {
