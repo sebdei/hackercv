@@ -26,7 +26,7 @@
       </div>
 
       <div class="col-12 col-md-4">
-        <img class="img-fluid" src="/assets/img/ambient.jpg">
+        <img class="img-fluid mb-3" src="/assets/img/ambient.jpg">
       </div>
 
       <div class="col-12 col-md-4">
