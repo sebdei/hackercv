@@ -13,8 +13,9 @@
           <CtaLink :title="content.ctaTitle" :to="{ name: 'About' }" />
         </div>
       </div>
+
       <div class="col-12 col-md-5 col-lg-3">
-        <img class="img-fluid rounded-circle" :src="content.avatarUrl" alt="hacker">
+        <img class="img-fluid rounded-circle" src="/assets/img/portrait.jpg" alt="hacker">
       </div>
     </div>
 

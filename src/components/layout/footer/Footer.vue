@@ -1,5 +1,5 @@
 <template>
-  <footer class="container-fluid border-top text-center py-5">
+  <footer class="container-fluid border-top text-center py-3">
     <FindMe class="mb-4" />
 
     <div class="text-muted mb-4">
