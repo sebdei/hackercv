@@ -9,21 +9,9 @@
     "description": "Responsible for subprojects for optimizing and enhancing the LoyJoy platform. Agile software development using SCRUM."
   },
   {
-<<<<<<< Updated upstream
     "title": "Information Systems M.Sc, WWU Münster",
     "subTitle": "2018 - 2021",
     "description": "With a strong focus on data science and software architecture modules. Graduated with thesis 'Virtual Staining of Digital Histology Slides using Generative Adversarial Netowrks' with an international cooperation of medical scientists (1.7)"
-=======
-<<<<<<< Updated upstream
-    "title": "Knecht",
-    "text": "Lorem ipsum sit dolor amet, etc. etc. etc.",
-    "year": 2017
-=======
-    "title": "Information Systems M.Sc, WWU Münster",
-    "subTitle": "2018 - 2021",
-    "description": "With a strong focus on data science and software architecture modules. Graduated with thesis 'Virtual Staining of Digital Histology Slides using Generative Adversarial Networks' with an international cooperation of medical scientists (1.7)"
->>>>>>> Stashed changes
->>>>>>> Stashed changes
   },
   {
     "title": "Working Student, Full-Stack Engineer @LoyJoy GmbH",
