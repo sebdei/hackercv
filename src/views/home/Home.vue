@@ -5,11 +5,11 @@
         <h2 class="mb-4">
           {{ content.title }}
         </h2>
-        <p class="mb-auto">
+        <p>
           {{ content.subTitle }}
         </p>
 
-        <div>
+        <div class="mb-5">
           <CtaLink :title="content.ctaTitle" :to="{ name: 'About' }" />
         </div>
       </div>
