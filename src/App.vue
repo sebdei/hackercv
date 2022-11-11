@@ -25,7 +25,15 @@ export default {
 
 <style lang="scss">
 @import 'bootstrap/scss/bootstrap.scss';
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;400;500&display=swap');
+
+@font-face {
+    font-family: "Roboto Mono";
+    src: url('/assets/font/RobotoMono-Medium.woff') format('woff')
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Roboto Mono", monospace;
+}
 
 html, body {
   height: 100%;
@@ -50,9 +58,5 @@ a:hover {
 
   display: flex;
   min-height: 100%;
-}
-
-h1, h2, h3, h4, h5 {
-  font-family: "Roboto Mono";
 }
 </style>
