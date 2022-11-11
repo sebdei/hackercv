@@ -2,13 +2,18 @@
   <View title="Projects" :sub-title="content.subTitle">
     <GridContent :items="content.projects">
       <template #default="itemScope">
-        <Card
-          :sub-title="itemScope.item.subTitle"
-          :title="itemScope.item.title"
-          class="d-flex h-100"
+        <a
+          :href="itemScope.item.url"
+          target="_blank"
         >
-          {{ itemScope.item.content }}
-        </Card>
+          <Card
+            :sub-title="itemScope.item.subTitle"
+            :title="itemScope.item.title"
+            class="d-flex h-100"
+          >
+            {{ itemScope.item.content }}
+          </Card>
+        </a>
       </template>
     </GridContent>
   </View>
